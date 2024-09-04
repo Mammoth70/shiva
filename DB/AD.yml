@@ -1,0 +1,9 @@
+devices:
+- routers
+- switches
+switches:
+- 192.168.10.1
+- 192.168.10.2
+routers:
+- 192.168.10.3
+- 192.168.10.4

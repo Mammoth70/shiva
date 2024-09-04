@@ -1,0 +1,38 @@
+Value Required IFACE (\S+)
+Value GROUP (\d+)
+Value STATE (\S+)
+Value VIRTUAL_IP ((\d{1,3}\.){3}\d{1,3})
+Value MASTER_IP ((\d{1,3}\.){3}\d{1,3})
+Value PRIORITY (\d+)
+Value PRIORITY_CFG (\d+)
+Value ACTIVE_PRIORITY (\d+)
+Value PREEMPT (\S+)
+Value DELAY (\d+)
+Value TIMER (\d+)
+Value TIMER_CFG (\d+)
+Value AUTH (\S+)
+Value ACTIVE_VIRT_MAC (([0-9a-f]{4}-){2}[0-9a-f]{4})
+Value CHECKTTL (\S+)
+Value CONFIGTYPE (\S+)
+Value BACKUPFORWARD (\S+)
+Value CREATETIME (\S+ \S+ \S+)
+Value LASTCHANGETIME (\S+ \S+ \S+)
+
+Start
+  ^\s+${IFACE}\s+\|\s+Virtual Router\s+${GROUP}
+  ^\s+State :\s+${STATE}
+  ^\s+Virtual IP :\s+${VIRTUAL_IP}
+  ^\s+Master IP :\s+${MASTER_IP}
+  ^\s+PriorityRun :\s+${PRIORITY}
+  ^\s+PriorityConfig :\s+${PRIORITY_CFG} 
+  ^\s+MasterPriority :\s+${ACTIVE_PRIORITY}
+  ^\s+Preempt :\s+${PREEMPT}\s+Delay Time :\s+${DELAY}
+  ^\s+TimerRun :\s+${TIMER}
+  ^\s+TimerConfig :\s+${TIMER_CFG}
+  ^\s+Auth type :\s+${AUTH}
+  ^\s+Virtual MAC :\s+${ACTIVE_VIRT_MAC}
+  ^\s+Check TTL :\s+${CHECKTTL}
+  ^\s+Config type :\s+${CONFIGTYPE}
+  ^\s+Backup-forward :\s+${BACKUPFORWARD} 
+  ^\s+Create time :\s+${CREATETIME}
+  ^\s+Last change time :\s+${LASTCHANGETIME} -> Record

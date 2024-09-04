@@ -1,0 +1,18 @@
+Value Required VLAN_ID (\d+)
+Value TYPE (\S+)
+Value List INTERFACES ([\w\-/]+)
+Value List STATUSES ([UD])
+
+Start
+#
+  ^\d+.* -> Continue.Record
+#
+  ^${VLAN_ID}\s+${TYPE}\s+(UT:|TG:){0,1}${INTERFACES}\(${STATUSES}\) -> Continue
+  ^${VLAN_ID}\s+${TYPE}\s+\S+\s+${INTERFACES}\(${STATUSES}\) -> Continue
+  ^${VLAN_ID}\s+${TYPE}(\s+\S+){2}\s+${INTERFACES}\(${STATUSES}\) -> Continue
+  ^${VLAN_ID}\s+${TYPE}(\s+\S+){3}\s+${INTERFACES}\(${STATUSES}\) -> Continue
+#
+  ^\s+(UT:|TG:){0,1}${INTERFACES}\(${STATUSES}\) -> Continue
+  ^\s+\S+\s+${INTERFACES}\(${STATUSES}\) -> Continue
+  ^(\s+\S+){2}\s+${INTERFACES}\(${STATUSES}\) -> Continue
+  ^(\s+\S+){3}\s+${INTERFACES}\(${STATUSES}\) -> Continue

@@ -1,0 +1,8 @@
+Value IP_ADDRESS ((\d{1,3}\.){3}\d{1,3})
+Value MAC (([0-9a-f]{4}\.){2}[0-9a-f]{4})
+Value AGE (\S+)
+Value INTERFACE (\S+)
+
+Start
+  ^\S+\s+${IP_ADDRESS}\s+${AGE}\s+${MAC}\s+\S+\s+${INTERFACE} -> Record
+  ^\S+\s+${IP_ADDRESS}\s+${AGE}\s+${MAC}\s+\S+ -> Record

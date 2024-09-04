@@ -1,0 +1,32 @@
+192.168.10.1:
+  hostname: sw1
+  model: C9500-48Y4C
+  ios: cat9k_iosxe.17.06.04.SPA.conf
+  ver: 17.06.04
+  int_10_OSPF:
+    INTF: Vl10
+    HOST: 10.10.0.1/255.255.255.224
+192.168.10.2:
+  hostname: sw2
+  model: C9500-48Y4C
+  ios: cat9k_iosxe.17.06.04.SPA.conf
+  ver: 17.06.04
+  int_10_OSPF:
+    INTF: Vl10
+    HOST: 10.10.0.2/255.255.255.224
+192.168.10.3:
+  hostname: r1
+  model: ASR1001-X
+  ios: asr1001x-universalk9.16.12.05.SPA.bin
+  ver: 16.12.5
+  int_10_OSPF:
+    INTF: Te0/0/0.10
+    HOST: 10.10.0.3/255.255.255.224
+192.168.10.4:
+  hostname: r2
+  model: ASR1001-X
+  ios: asr1001x-universalk9.16.12.05.SPA.bin
+  ver: 16.12.5
+  int_10_OSPF:
+    INTF: Te0/0/0.10
+    HOST: 10.10.0.4/255.255.255.224

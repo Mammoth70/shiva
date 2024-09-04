@@ -1,0 +1,8 @@
+Value Required IFACE (\S+)
+Value GROUP (\d+)
+Value STATE (\w+)
+Value TYPE (\S+)
+Value VIRTUAL_IP ((\d{1,3}\.){3}\d{1,3})
+
+Start
+  ^${GROUP}\s+${STATE}\s+${IFACE}\s+${TYPE}\s+${VIRTUAL_IP} -> Record

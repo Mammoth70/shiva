@@ -1,0 +1,14 @@
+Value Required INTF (\S+)
+Value LINK_STATUS (\S+)
+Value PROTOCOL_STATUS (\S+)
+Value List IPADDR ((\d{1,3}\.){3}\d{1,3})
+Value List MASK (\d+)
+Value MTU (\d+)
+
+
+Start
+  ^${INTF}\s+current state : ${LINK_STATUS}
+  ^Line protocol current state : ${PROTOCOL_STATUS}
+  ^The Maximum Transmit Unit : ${MTU} bytes
+  ^Internet Address is ${IPADDR}/${MASK}
+  ^$$ -> Record

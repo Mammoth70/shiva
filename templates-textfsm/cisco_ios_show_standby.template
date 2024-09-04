@@ -1,0 +1,36 @@
+Value Required IFACE (\S+)
+Value GROUP (\d+)
+Value VERSION (\d+)
+Value STATE (\w+)
+Value VIRTUAL_IP (\S+)
+Value ACTIVE_VIRT_MAC (\S+)
+Value LOCAL_VIRT_MAC (\S+)
+Value HELLO_TIME (\d+)
+Value HOLD_TIME (\d+)
+Value AUTH (\w+)
+Value PREEMPT (\w+)
+Value ACTIVE (\d+\.\d+\.\d+\.\d+|local)
+Value ACTIVE_PRIORITY (\d+)
+Value ACTIVE_MAC (\S+)
+Value STANDBY (\d+\.\d+\.\d+\.\d+|local)
+Value STANDBY_PRIORITY (\d+)
+Value PRIORITY (\d+)
+Value GRP_NAME (\S+)
+
+Start
+  ^${IFACE}\s+\-\s+Group\s+${GROUP}\s+\(version\s+${VERSION}\)
+  ^.*State\s+is\s+${STATE}
+  ^.*Virtual\s+IP\s+address\s+is\s+${VIRTUAL_IP}
+  ^.*Active\s+virtual\s+MAC\s+address\s+is\s+${ACTIVE_VIRT_MAC}
+  ^.*Local\s+virtual\s+MAC\s+address\s+is\s+${LOCAL_VIRT_MAC}
+  ^.*Hello\s+time\s+${HELLO_TIME}.*hold\s+time\s+${HOLD_TIME}
+  ^.*Authentication\s+${AUTH}
+  ^.*Preemption\s+${PREEMPT}
+  ^.*Active\s+router\s+is\s+${ACTIVE}(,\s+priority\s+${ACTIVE_PRIORITY})?
+  ^\s+MAC\s+address\s+is\s+${ACTIVE_MAC}
+  ^.*Standby\s+router\s+is\s+${STANDBY}(,\s+priority\s+${STANDBY_PRIORITY})?
+  ^.*Priority\s+${PRIORITY}
+  ^.*Group\s+name\s+is\s+"${GRP_NAME}" -> Record
+  # Capture time-stamp if vty line has command time-stamping turned on
+  ^Load\s+for\s+
+  ^Time\s+source\s+is

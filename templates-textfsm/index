@@ -1,0 +1,59 @@
+Template, Hostname, Platform, Command
+
+cisco_ios_show_arp.template, .*, cisco_ios, sh[[ow]] arp
+cisco_ios_show_cdp_neighbors_detail.template, .*, cisco_ios, sh[[ow]] cdp n[[eighbors]] de[[tail]]
+cisco_ios_show_cdp_neighbors.template, .*, cisco_ios, sh[[ow]] cdp n[[eighbors]]
+cisco_ios_show_clock.template, .*, cisco_ios, sh[[ow]] clo[[ck]]
+cisco_ios_show_inventory.template, .*, cisco_ios, sh[[ow]] inv[[entory]]
+cisco_ios_show_interfaces_switchport.template, .*, cisco_ios, sh[[ow]] int[[erfaces]] sw[[itchport]]
+cisco_ios_show_interfaces.template, .*, cisco_ios, sh[[ow]] int[[erfaces]]
+cisco_ios_show_ip_arp.template, .*, cisco_ios, sh[[ow]] ip arp
+cisco_ios_show_ip_bgp_summary.template, .*, cisco_ios, sh[[ow]] ip bgp sum[[mary]]
+cisco_ios_show_ip_bgp.template, .*, cisco_ios, sh[[ow]] ip bgp
+cisco_ios_show_ip_dhcp_binding.template, .*, cisco_ios, sh[[ow]] ip dh[[cp]] b[[inding]]
+cisco_ios_show_ip_dhcp_snooping_binding.template, .*, cisco_ios, sh[[ow]] ip dh[[cp]] sn[[ooping]] b[[inding]]
+cisco_ios_show_ip_interface_brief.template, .*, cisco_ios, sh[[ow]] ip int[[erface]] br[[ief]]
+cisco_ios_show_ip_interface.template, .*, cisco_ios, sh[[ow]] ip int[[erface]]
+cisco_ios_show_ip_ospf_database.template, .*, cisco_ios, sh[[ow]] ip ospf data[[base]]
+cisco_ios_show_ip_ospf_interface_brief.template, .*, cisco_ios, sh[[ow]] ip ospf int[[erface]] br[[ief]]
+cisco_ios_show_ip_ospf_neighbor.template, .*, cisco_ios, sh[[ow]] ip ospf ne[[ighbor]]
+cisco_ios_show_ip_route_ospf.template, .*, cisco_ios, sh[[ow]] ip rou[[te]] o[[spf]]
+cisco_ios_show_ip_route.template, .*, cisco_ios, sh[[ow]] ip rou[[te]]
+cisco_ios_show_lldp_neighbors_detail.template, .*, cisco_ios, sh[[ow]] lldp ne[[ighbors]] de[[tail]]
+cisco_ios_show_lldp_neighbors.template, .*, cisco_ios, sh[[ow]] lldp ne[[ighbors]]
+cisco_ios_show_mab_all.template, .*, cisco_ios, sh[[ow]] mab a[[ll]]
+cisco_ios_show_mac_address-table.template, .*, cisco_ios, sh[[ow]] mac ad[[dress-table]]
+cisco_ios_show_object-group.template, .*, cisco_ios, sh[[ow]] ob[[ject-group]]
+cisco_ios_show_spanning-tree.template, .*, cisco_ios, sh[[ow]] sp[[anning-tree]]
+cisco_ios_show_standby_brief.template, .*, cisco_ios, sh[[ow]] sta[[ndby]] br[[ief]]
+cisco_ios_show_standby.template, .*, cisco_ios, sh[[ow]] sta[[ndby]]
+cisco_ios_show_version.template, .*, cisco_ios, sh[[ow]] ver[[sion]]
+cisco_ios_show_vlan.template, .*, cisco_ios, sh[[ow]] vlan
+
+cisco_nxos_show_cdp_neighbors_detail.template, .*, cisco_nxos, sh[[ow]] c[[dp]] neig[[hbors]] det[[ail]]
+cisco_nxos_show_cdp_neighbors.template, .*, cisco_nxos, sh[[ow]] cd[[p]] neig[[hbors]]
+cisco_nxos_show_clock.template, .*, cisco_nxos, sh[[ow]] clo[[ck]]
+cisco_nxos_show_inventory.template, .*, cisco_nxos, sh[[ow]] inv[[entory]]
+cisco_nxos_show_interfaces_switchport.template, .*, cisco_nxos, sh[[ow]] int[[erfaces]] sw[[itchport]]
+cisco_nxos_show_ip_arp.template, .*, cisco_nxos, sh[[ow]] i[[p]] a[[rp]]
+cisco_nxos_show_ip_arp_detail.template, .*, cisco_nxos, sh[[ow]] i[[p]] a[[rp]] det[[ail]]
+cisco_nxos_show_ip_interface_brief.template, .*, cisco_nxos, sh[[ow]] ip int[[erface]] b[[rief]]
+cisco_nxos_show_ip_ospf_neighbor_vrf.template, .*, cisco_nxos, sh[[ow]] ip ospf nei[[ghbor]] vrf (\S+)
+cisco_nxos_show_ip_ospf_database.template, .*, cisco_nxos, sh[[ow]] ip o[[spf]] d[[atabase]]
+cisco_nxos_show_ip_route.template, .*, cisco_nxos, sh[[ow]] ip route
+cisco_nxos_show_lldp_neighbors_detail.template, .*, cisco_nxos, sh[[ow]] ll[[dp]] nei[[ghbors]] d[[etail]]
+cisco_nxos_show_lldp_neighbors.template, .*, cisco_nxos, sh[[ow]] ll[[dp]] nei[[ghbors]]
+cisco_nxos_show_mac_address-table.template, .*, cisco_nxos, sh[[ow]] m[[ac]] addr[[ess-table]]
+cisco_nxos_show_version.template, .*, cisco_nxos, sh[[ow]] ver[[sion]]
+cisco_nxos_show_vlan.template, .*, cisco_nxos, sh[[ow]] vl[[an]]
+
+huawei_display_arp.template, .*, huawei, dis[[play]] arp
+huawei_display_interface.template, .*, huawei, dis[[play]] int[[erface]]
+huawei_display_ip_interface_brief.template, .*, huawei, dis[[play]] ip int[[erface]] br[[ief]]
+huawei_display_ip_interface.template , .*, huawei, dis[[play]] ip int[[erface]]
+huawei_display_lldp_neighbors_brief.template, .*, huawei, dis[[play]] lldp n[[eighbors]] br[[ief]]
+huawei_display_lldp_neighbors.template, .*, huawei, dis[[play]] lldp n[[eighbors]]
+huawei_display_mac-address.template, .*, huawei, dis[[play]] mac-ad[[dress]]
+huawei_display_vlan.template, .*, huawei, dis[[play]] vlan
+huawei_display_vrrp_brief.template, .*, huawei, dis[[play]] vr[[rp]] b[[rief]]
+huawei_display_vrrp.template, .*, huawei, dis[[play]] vr[[rp]]

@@ -1,0 +1,5 @@
+Value INTERFACE (\S+)
+
+Start
+  ^MAB\s+details\s+for\s+${INTERFACE}
+  ^Mac-Auth-Bypass\s+=\s+Enabled -> Record

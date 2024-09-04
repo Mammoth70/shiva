@@ -1,0 +1,7 @@
+Value ip ((\d{1,3}\.){3}\d{1,3})
+Value client (\S+)
+Value lease (\S+\s+\d+\s+\d+\s+\d+:\d+\s+\S+)
+Value type (\S+)
+
+Start
+  ^${ip}\s+${client}\s+${lease}\s+${type} -> Record

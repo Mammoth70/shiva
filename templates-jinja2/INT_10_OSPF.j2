@@ -1,0 +1,28 @@
+{#-
+    Шаблон (в формате jinja2) настройки интерфейса OSPF соседей
+    параметры:
+
+        ip          - IP-адрес маршрутизатора
+                      если не 192.168.10.X - файл конфигурации будет пустой
+        int_10_OSPF - словарь параметров интерфейса OSPF соседей
+                      если отсутствует - файл конфигурации будет пустой
+              .INTF - имя интерфейса
+              .HOST - ip/маска интерфейса
+        model       - для корректной настройки flow, rate и vlan-ов
+-#}
+{%- if ip.startswith('192.168.255.') and int_10_OSPF and int_10_OSPF.INTF and int_10_OSPF.HOST -%}
+
+{%- set IF = int_10_OSPF -%} 
+
+{%- set namevlan = 'OSPFvlan' -%}
+{%- include 'r_addvlan.inc' %}
+
+interface {{ IF.INTF }}
+ description # OSPF VLAN #
+ {%- include 'if_dot1Q.inc' %}
+ ip add {{ IF.HOST|interface_to_ip }} {{ IF.HOST|interface_to_netmask }}
+
+router ospf 1
+ no passive-interface {{ IF.INTF }}
+ network {{ IF.HOST|interface_to_ipnetwork }} {{ IF.HOST|interface_to_hostmask }} area 0
+{%- endif -%}

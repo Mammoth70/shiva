@@ -1,0 +1,7 @@
+Value Required NEIGHBOR (\S+)
+Value Required LOCAL_INTERFACE (\S+)
+Value Required NEIGHBOR_INTERFACE (\S+)
+Value EXPTIME (\d+)
+
+Start
+  ^${LOCAL_INTERFACE}\s+${NEIGHBOR}\s+${NEIGHBOR_INTERFACE}\s+${EXPTIME} -> Record

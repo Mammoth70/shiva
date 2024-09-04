@@ -1,0 +1,8 @@
+{#
+    Шаблон (в формате jinja2) настройки HOSTNAME устройства
+    параметры:
+        hostname - имя маршрутизатора
+#}
+{%- if hostname %}
+hostname  {{ hostname }}
+{%- endif %}
