@@ -1,0 +1,29 @@
+acl:
+  declared:
+  - '^acl number (?P<name>\S+)'
+  - '^acl name (?P<name>\S+)'
+  used:
+  - '^snmp-agent.*acl (?P<name>\S+)'
+  - ' if-match acl (?P<name>\S+)'
+  - ' acl (?P<name>\S+)'
+traffic classifier:
+  declared:
+  - '^traffic classifier (?P<name>\S+)'
+  used:
+  - '^ classifier (?P<name>\S+)'
+traffic behavior:
+  declared:
+  - '^traffic behavior (?P<name>\S+)'
+  used:
+  - '^ classifier \S+ behavior (?P<name>\S+)'
+traffic policy:
+  declared:
+  - '^traffic policy (?P<name>\S+)'
+  used:
+  - '^ traffic-policy (?P<name>\S+)'
+ntp-service authentication-keyid:
+  declared:
+  - '^ntp-service authentication-keyid (?P<name>\S+)'
+  used:
+  - '^ntp-service \S+ authentication-keyid (?P<name>\S+)'
+  - '^ntp-service \S+ \S+ authentication-keyid (?P<name>\S+)'
