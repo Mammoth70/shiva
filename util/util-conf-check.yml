@@ -1,0 +1,147 @@
+access-list:
+  declared:
+  - '^ip access-list (extended|standard) (?P<name>\S+)'
+  - '^access-list (?P<name>\S+) (permit|deny)'
+  used:
+  - '^ ip access-group (?P<name>\S+) (in|out)'
+  - '^ match( ip)? address (?P<name>\S+)$'
+  - '^ match access-group name (?P<name>\S+)'
+  - '^ access-class (?P<name>\S+)'
+  - '^snmp-server.* (access|RO|RW) (?P<name>\S+)'
+  - '^ntp access-group.* (?P<name>\S+)$'
+  - '^ip nat .*(source|destination).* list (?P<name>\S+)'
+crypto ikev2 keyring:
+  declared:
+  - '^crypto ikev2 keyring (?P<name>\S+)$'
+  used:
+  - ' keyring local (?P<name>\S+)$'
+crypto ikev2 policy:
+  declared:
+  - '^crypto ikev2 policy (?P<name>\S+)'
+  declared_added:
+  - 'default'
+  check_unused: false
+  used_added:
+  - 'default'
+crypto ikev2 profile:
+  declared:
+  - '^crypto ikev2 profile (?P<name>\S+)$'
+  used:
+  - ' set ikev2-profile (?P<name>\S+)$'
+crypto ikev2 proposal:
+  declared:
+  - '^crypto ikev2 proposal (?P<name>\S+)'
+  declared_added:
+  - 'default'
+  used:
+  - '^ proposal (?P<name>\S+)$'
+  used_added:
+  - 'default'
+crypto ipsec profile:
+  declared:
+  - '^crypto ipsec profile (?P<name>\S+)$'
+  declared_added:
+  - 'default'
+  used:
+  - ' tunnel protection ipsec profile (?P<name>\S+)'
+  used_added:
+  - 'default'
+crypto keyring:
+  declared:
+  - '^crypto keyring (?P<name>\S+)'
+  check_unused: false
+crypto-map:
+  declared:
+  - '^crypto map (?P<name>\S+)'
+  used:
+  - ' crypto map (?P<name>\S+)$'
+  check_unused: false
+interface:
+  declared:
+  - '^interface (?P<name>\S+)$'
+  declared_added:
+  - 'default'
+  used:
+  - '[ -]interface (?P<name>\S+)$'
+  check_unused: false
+ip nat pool:
+  declared:
+  - '^ip nat pool (?P<name>\S+)'
+  used:
+  - '^ip nat .*(source|destination).* pool (?P<name>\S+)'
+object-group network:
+  declared:
+  - '^object-group network (?P<name>\S+)'
+  used:
+  - '^ (\d+ )?(permit|deny) .+? object-group (?P<name>\S+)'
+  - '^ (\d+ )?(permit|deny) .+ object-group (?P<name>\S+)'
+prefix-list:
+  declared:
+  - '^ip prefix-list (?P<name>\S+)'
+  used:
+  - ' distribute-list prefix (?P<name>\S+)'
+  - '^ match ip address prefix-list (?P<name>\S+)'
+  - '^ match ip address prefix-list \S+ (?P<name>\S+)'
+  - '^ match ip address prefix-list \S+ \S+ (?P<name>\S+)'
+  - '^ match ip address prefix-list \S+ \S+ \S+ (?P<name>\S+)'
+  - '^ match ip address prefix-list \S+ \S+ \S+ \S+ (?P<name>\S+)'
+route-map:
+  declared:
+  - '^route-map (?P<name>\S+)'
+  used:
+  - ' route-map (?P<name>\S+)'
+transform-set:
+  declared:
+  - '^crypto ipsec transform-set (?P<name>\S+)'
+  declared_added:
+  - 'default'
+  used:
+  - ' set transform-set (?P<name>\S+)'
+  used_added:
+  - 'default'
+voice translation-rule:
+  declared:
+  - '^voice translation-rule (?P<name>\S+)'
+  used:
+  - '^ translate call(ing|ed) (?P<name>\S+)'
+voice translation-profile:
+  declared:
+  - '^voice translation-profile (?P<name>\S+)'
+  used:
+  - '^ translation-profile outgoing (?P<name>\S+)'
+policy-map:
+  declared:
+  - '^policy-map (?P<name>\S+)$'
+  used:
+  - '^ service-policy (input|output) (?P<name>\S+)'
+class-map:
+  declared:
+  - '^class-map (match-all|match-any|type) (?P<name>\S+)$'
+  used:
+  - '^ class (?P<name>\S+)$'
+key chain:
+  declared:
+  - '^key chain (?P<name>\S+)$'
+  used:
+  - '^ standby \S+ authentication md5 key-chain (?P<name>\S+)$'
+ntp authentication-key:
+  declared:
+  - '^ntp authentication-key (?P<name>\S+)' 
+  used:
+  - '^ntp server.* key (?P<name>\S+)'
+  - '^ntp trusted-key (?P<name>\S+)'
+logging discriminator:
+  declared:
+  - '^logging discriminator (?P<name>\S+)'
+  used:
+  - '^logging.* discriminator (?P<name>\S+)'
+aaa group server radius:
+  declared:
+  - '^aaa group server radius (?P<name>\S+)'
+  used:
+  - 'aaa a.* group (?P<name>\S+)'
+radius server:
+  declared:
+  - '^radius server (?P<name>\S+)'
+  used:
+  - '^ server name (?P<name>\S+)'
