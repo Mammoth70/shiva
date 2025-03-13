@@ -10,6 +10,7 @@ access-list:
   - '^snmp-server.* (access|RO|RW) (?P<name>\S+)'
   - '^ntp access-group.* (?P<name>\S+)$'
   - '^ip nat .*(source|destination).* list (?P<name>\S+)'
+  - '^monitor session \d+ filter ip access-group (?P<name>\S+)$'
 crypto ikev2 keyring:
   declared:
   - '^crypto ikev2 keyring (?P<name>\S+)$'
@@ -114,16 +115,48 @@ policy-map:
   - '^policy-map (?P<name>\S+)$'
   used:
   - '^ service-policy (input|output) (?P<name>\S+)'
+  used_added:
+  - 'port_child_policy'
 class-map:
   declared:
-  - '^class-map (match-all|match-any|type) (?P<name>\S+)$'
+  - '^class-map (match-any|match-all|type) (?P<name>\S+)$'
   used:
   - '^ class (?P<name>\S+)$'
+  used_added:
+  - 'non-client-nrt-class'
+  - 'system-cpp-police-topology-control'
+  - 'system-cpp-police-sw-forward'
+  - 'system-cpp-default'
+  - 'system-cpp-police-sys-data'
+  - 'system-cpp-police-punt-webauth'
+  - 'system-cpp-police-l2lvx-control'
+  - 'system-cpp-police-forus'
+  - 'system-cpp-police-multicast-end-station'
+  - 'system-cpp-police-multicast'
+  - 'system-cpp-police-l2-control'
+  - 'system-cpp-police-dot1x-auth'
+  - 'system-cpp-police-data'
+  - 'system-cpp-police-stackwise-virt-control'
+  - 'system-cpp-police-protocol-snooping'
+  - 'system-cpp-police-dhcp-snooping'
+  - 'system-cpp-police-system-critical'
+  - 'system-cpp-police-routing-control'
+  - 'system-cpp-police-ewlc-control'
+  - 'system-cpp-police-ios-routing'
+  - 'system-cpp-police-high-rate-app'
+  - 'system-cpp-police-ios-feature'
 key chain:
   declared:
   - '^key chain (?P<name>\S+)$'
   used:
   - '^ standby \S+ authentication md5 key-chain (?P<name>\S+)$'
+  - '^ ip authentication key-chain eigrp \d+ (?P<name>\S+)$'
+  - '^ authentication (sha-1|md5|meticulous-md5|meticulous-sha-1) keychain (?P<name>\S+)$'
+bfd-template:
+  declared:
+  - '^bfd-template (multi|single)-hop (?P<name>\S+)$'
+  used:
+  - '^ bfd template (?P<name>\S+)$'
 ntp authentication-key:
   declared:
   - '^ntp authentication-key (?P<name>\S+)' 
