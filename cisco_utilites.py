@@ -25,7 +25,7 @@ AD = {}  # Словарь с БД групп и объектов (IP-адрес�
 r_name = 'Shiva'
 r_fullname = '\n' + r_name + ' - система автоматизации администрирования телекоммуникационного оборудования\n'
 # r_version = 'ver. 1.0.2077  - 10.12.2020'
-r_version = 'ver. 1.3.4  - 26.02.2024'
+r_version = 'ver. 1.3.5  - 17.03.2025'
 r_copyright = 'Автор: Андрей Яковлев (andrey-yakovlev@yandex.ru) ' + r_version
 r_params = 'параметры командной строки'
 r_help = 'help'
@@ -429,6 +429,7 @@ def abbr_interface(interface):
             'Port-channel'         : 'Po', 
             'Dialer'               : 'Di', 
             'Loopback'             : 'Lo', 
+            'Serial'               : 'Se',
             'Tunnel'               : 'Tu'}
     interface = capitalize1(interface)
     for key in abbr.keys():
@@ -452,6 +453,7 @@ def full_interface(interface):
             'Po'    : 'Port-channel', 
             'Di'    : 'Dialer', 
             'Lo'    : 'Loopback', 
+            'Se'    : 'Serial',
             'Tu'    : 'Tunnel'}
     interface = interface.capitalize()
     for key in abbr.keys():
