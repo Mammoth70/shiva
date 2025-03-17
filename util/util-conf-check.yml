@@ -108,9 +108,9 @@ transform-set:
   - 'default'
 voice translation-rule:
   declared:
-  - '^voice translation-rule (?P<name>\S+)'
+  - '^voice translation-rule (?P<name>\d+)'
   used:
-  - '^ translate call(ing|ed) (?P<name>\S+)'
+  - '^ translate call(ing|ed) (?P<name>\d+)'
 voice translation-profile:
   declared:
   - '^voice translation-profile (?P<name>\S+)'
@@ -165,10 +165,10 @@ bfd-template:
   - '^ bfd template (?P<name>\S+)$'
 ntp authentication-key:
   declared:
-  - '^ntp authentication-key (?P<name>\S+)' 
+  - '^ntp authentication-key (?P<name>\d+)' 
   used:
-  - '^ntp server.* key (?P<name>\S+)'
-  - '^ntp trusted-key (?P<name>\S+)'
+  - '^ntp server.* key (?P<name>\d+)'
+  - '^ntp trusted-key (?P<name>\d+)'
 logging discriminator:
   declared:
   - '^logging discriminator (?P<name>\S+)'
