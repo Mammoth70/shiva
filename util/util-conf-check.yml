@@ -60,10 +60,16 @@ crypto-map:
 interface:
   declared:
   - '^interface (?P<name>\S+)$'
-  declared_added:
-  - 'default'
   used:
-  - '[ -]interface (?P<name>\S+)$'
+  - '(local|bfd) interface (?P<name>[A-Z]\S+\d+)$'
+  - 'passive-interface (?P<name>[A-Z]\S+\d+)$'
+  - 'source-interface.* (?P<name>[A-Z]\S+\d+)$'
+  - 'trap-source (?P<name>[A-Z]\S+\d+)$'
+  - '^ source (?P<name>[A-Z]\S+\d+)$'
+  - 'ip flow-export source (?P<name>[A-Z]\S+\d+)$'
+  - 'tunnel source (?P<name>[A-Z]\S+\d+)$'
+  - 'ntp server.* source (?P<name>[A-Z]\S+\d+)$'
+# - '(source|destination) interface (?P<name>[A-Z]\S+\d+)$'
   check_unused: false
 ip nat pool:
   declared:
