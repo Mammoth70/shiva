@@ -1,4 +1,12 @@
-Shiva - система автоматизации администрирования телекоммуникационного оборудования.
+# Shiva
+
+[![GitHub code size in bytes][1]]() [![GitHub license][2]][3]
+
+[1]: https://img.shields.io/github/languages/code-size/Mammoth70/shiva.svg
+[2]: https://img.shields.io/github/license/Mammoth70/shiva.svg
+[3]: LICENSE
+
+система автоматизации администрирования телекоммуникационного оборудования.
 
 Утилиты предназначены:
 - для автоматизации работы с оборудованием Cisco (проверялось на IOS 12, 15, XE).
@@ -10,3 +18,8 @@ Shiva - система автоматизации администрирован
 Никакой ответственности за использование утилит автор не несёт.
 Будьте осторожны, внимательны и осмотрительны!
 Некорректное использование утилит способно в считанные секунды уничтожить всю сеть!
+
+## License
+This project is licensed under the **GNU General Public License v3.0 (GPLv3)**
+See the [LICENSE](LICENSE) file for details.
+Copyright 2025 Andrey Yakovlev <andrey-yakovlev@yandex.ru>
