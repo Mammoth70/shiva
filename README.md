@@ -29,8 +29,8 @@
 * [Jinja2](https://pypi.python.org/pypi/Jinja2)
 * [tabulate](https://pypi.python.org/pypi/tabulate)
 * [textfsm](https://pypi.python.org/pypi/textfsm)
-* [netmiko](https://pypi.python.org/pypi/netmiko)
 * [paramiko](https://pypi.python.org/pypi/paramiko)
+* [netmiko](https://pypi.python.org/pypi/netmiko)
 
 ## Установка
 Склонировать репозиторий:
