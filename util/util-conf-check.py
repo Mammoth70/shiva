@@ -16,7 +16,7 @@ import argparse
 #DB =  {
 #'interface' : {                                 # Название объекта
 #    'declared' : [                              # список regexp-ов для поиска объявленных объектов
-#        r'^interface (?P<name>\S+)$'            
+#        r'^interface (?P<name>\S+)$'
 #        ]
 #    'declared_added' : ['default']              # Список объектов, которые нужно добавить к объявленным
 #    'used' : [                                  # список regexp-ов для поиска использованных объектов
@@ -40,7 +40,7 @@ def load_conf_from_text(input_file):
     '''
     global lines
     global tree
-   
+
     with open(input_file, 'r') as f:
         lines = [line.strip(('\n\r')) for line in f]
 
@@ -94,7 +94,8 @@ def print_check_objs_used_err(s, objname):
     global lines
     global location
     for obj in s:
-        print('\n{0}\n   >>> объявлен, но не используется {2} \"{3}\" (строка {1}) <<<'.format(lines[location[obj]], location[obj]+1, objname, obj))
+        if location[obj]:
+            print('\n{0}\n   >>> объявлен, но не используется {2} \"{3}\" (строка {1}) <<<'.format(lines[location[obj]], location[obj]+1, objname, obj))
     return None
 
 
