@@ -192,6 +192,7 @@ zbf-zone1:
   - '^zone-pair security \S+ source \S+ destination (?P<name>\S+)$'
   declared_added:
   - 'self'
+  check_unused: false
 zbf-zone2:
   declared:
   - '^zone security (?P<name>\S+)'
