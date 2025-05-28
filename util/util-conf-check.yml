@@ -184,3 +184,16 @@ radius server:
   - '^radius server (?P<name>\S+)'
   used:
   - '^ server name (?P<name>\S+)'
+zbf-zone1:
+  declared:
+  - '^zone security (?P<name>\S+)'
+  used:
+  - '^zone-pair security \S+ source (?P<name>\S+) destination \S+$'
+  - '^zone-pair security \S+ source \S+ destination (?P<name>\S+)$'
+  declared_added:
+  - 'self'
+zbf-zone2:
+  declared:
+  - '^zone security (?P<name>\S+)'
+  used:
+  - '^ zone-member security (?P<name>\S+)$'
