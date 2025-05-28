@@ -94,8 +94,10 @@ def print_check_objs_used_err(s, objname):
     global lines
     global location
     for obj in s:
-        if location[obj]:
+        if location.get(obj):
             print('\n{0}\n   >>> объявлен, но не используется {2} \"{3}\" (строка {1}) <<<'.format(lines[location[obj]], location[obj]+1, objname, obj))
+        else:
+            print('\n{0}\n   >>> объявлен, но не используется {1} \"{2}\" <<<'.format('объявление по умолчанию', objname, obj))
     return None
 
 
