@@ -10,7 +10,7 @@
               .HOST - ip/маска интерфейса
         model       - для корректной настройки flow, rate и vlan-ов
 -#}
-{%- if ip.startswith('192.168.255.') and int_10_OSPF and int_10_OSPF.INTF and int_10_OSPF.HOST -%}
+{%- if ip.startswith('192.168.10.') and int_10_OSPF and int_10_OSPF.INTF and int_10_OSPF.HOST -%}
 
 {%- set IF = int_10_OSPF -%} 
 
