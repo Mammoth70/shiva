@@ -126,6 +126,8 @@ policy-map:
 class-map:
   declared:
   - '^class-map (match-any|match-all|type) (?P<name>\S+)$'
+  declared_added:
+  - 'class-default'
   used:
   - '^ class (?P<name>\S+)$'
   used_added:
@@ -187,11 +189,11 @@ radius server:
 zbf-zone1:
   declared:
   - '^zone security (?P<name>\S+)'
+  declared_added:
+  - 'self'
   used:
   - '^zone-pair security \S+ source (?P<name>\S+) destination \S+$'
   - '^zone-pair security \S+ source \S+ destination (?P<name>\S+)$'
-  declared_added:
-  - 'self'
   check_unused: false
 zbf-zone2:
   declared:
