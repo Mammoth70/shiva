@@ -25,7 +25,7 @@ AD = {}  # Словарь с БД групп и объектов (IP-адрес�
 r_name = 'Shiva'
 r_fullname = '\n' + r_name + ' - система автоматизации администрирования телекоммуникационного оборудования\n'
 # r_version = 'ver. 1.0.2077  - 10.12.2020'
-r_version = 'ver. 1.3.6  - 25.05.2025'
+r_version = 'ver. 1.3.7  - 17.06.2025'
 r_copyright = 'Автор: Андрей Яковлев (andrey-yakovlev@yandex.ru) ' + r_version
 r_params = 'параметры командной строки'
 r_help = 'help'
@@ -417,7 +417,7 @@ def abbr_interface(interface):
     '''
     Сокращает строку с названием интерфейса.
     '''
-    abbr = {#'NeuroInterface'      : 'Ne'
+    abbr = {#'NeuroInterface'      : 'Ne',
             'FastEthernet'         : 'Fa', 
             'GigabitEthernet'      : 'Gi',
             'Ethernet'             : 'Eth',
@@ -428,7 +428,7 @@ def abbr_interface(interface):
             'Vlan'                 : 'Vl', 
             'Port-channel'         : 'Po', 
             'Dialer'               : 'Di', 
-            'Loopback'             : 'Lo', 
+            'Loopback'             : 'Lo',
             'Serial'               : 'Se',
             'Tunnel'               : 'Tu'}
     interface = capitalize1(interface)
@@ -441,7 +441,7 @@ def full_interface(interface):
     '''
     Восстанавливает сокращенную строку с названием интерфейса.
     '''
-    abbr = {#'Ne'   : 'NeuroInterface'
+    abbr = {#'Ne'   : 'NeuroInterface',
             'Fa'    : 'FastEthernet', 
             'Gi'    : 'GigabitEthernet', 
             'Eth'   : 'Ethernet', 
@@ -453,7 +453,7 @@ def full_interface(interface):
             'Po'    : 'Port-channel', 
             'Di'    : 'Dialer', 
             'Lo'    : 'Loopback', 
-            'Se'    : 'Serial',
+            'Se'    : 'Serial', 
             'Tu'    : 'Tunnel'}
     interface = interface.capitalize()
     for key in abbr.keys():
@@ -631,7 +631,7 @@ def get_objects(group):
     return objects
 
 
-def dynamic_grop(include, exclude=None):
+def dynamic_group(include, exclude=None):
     '''
     Cобирает список объектов по спискам включенных групп/объектов и исключенных групп/объектов.
     '''
@@ -706,7 +706,7 @@ def parse_source_param(groupfile, include, exclude = None):
         if (include == ['all']):                                                # это встроенная группа "all"?
             devices = get_devices_from_set(get_all(exclude))                    # тогда работаем по группе "all"
         else:                                                                   # или это список групп?
-            devices = get_devices_from_set(dynamic_grop(include, exclude))      # работаем по списку групп
+            devices = get_devices_from_set(dynamic_group(include, exclude))     # работаем по списку групп
     elif all( true_ip(ip) for ip in include):                               # или в списке только правильные IP-адреса?
         devices = get_devices_from_set(include)                             # работаем по списку IP-адресов
     else:
