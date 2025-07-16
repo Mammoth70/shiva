@@ -25,7 +25,7 @@ AD = {}  # Словарь с БД групп и объектов (IP-адрес�
 r_name = 'Shiva'
 r_fullname = '\n' + r_name + ' - система автоматизации администрирования телекоммуникационного оборудования\n'
 # r_version = 'ver. 1.0.2077  - 10.12.2020'
-r_version = 'ver. 1.3.7  - 17.06.2025'
+r_version = 'ver. 1.4.1  - 16.07.2025'
 r_copyright = 'Автор: Андрей Яковлев (andrey-yakovlev@yandex.ru) ' + r_version
 r_params = 'параметры командной строки'
 r_help = 'help'
@@ -1097,6 +1097,20 @@ def eui64_to_mac(eui64):
         return mac
     else:
         return '000000000000'
+
+
+def ipv6_to_eui64(ipv6):
+    '''
+    Выделяет из IPv6 адрес часть EUI64
+    '''
+    return ipaddress.IPv6Address(ipv6).exploded[20::]
+    
+
+def ipv6_to_mac(ipv6):
+    '''
+    Конвертирует IPv6 адрес в MAC адрес
+    '''
+    return eui64_to_mac(ipv6_to_eui64(ipv6))
 
 
 def obfus_cisco(conf):
