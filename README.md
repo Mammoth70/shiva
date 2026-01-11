@@ -2,7 +2,7 @@
 
 [![Python][1]][2] [![GitHub license][5]][6] [![GitHub code size in bytes][7]]()
 
-[1]: https://img.shields.io/badge/python-3.6+-blue.svg?logo=python&logoColor=white
+[1]: https://img.shields.io/badge/Python-3.6+-blue.svg?logo=Python&logoColor=lightblue
 [2]: https://www.python.org/downloads/
 [3]: https://img.shields.io/pypi/v/PyYAML.svg?logo=pypi&logoColor=white
 [4]: https://pypi.python.org/pypi/
